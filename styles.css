@@ -1,0 +1,112 @@
+/* General Reset */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0f3ed;
+    overflow: hidden;
+}
+
+.card {
+    background: #c7eef5;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #ff4081;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.images {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.images img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-in-out;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #555;
+    margin: 20px 0;
+}
+
+.footer {
+    font-size: 1em;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 1;
+    animation: fall 6s infinite;
+}
+
+.piece.red { background-color: #e57373; }
+.piece.blue { background-color: #64b5f6; }
+.piece.yellow { background-color: #fdd835; }
+.piece.green { background-color: #4caf50; }
+
+/* Distribuir las piezas de confeti en la pantalla */
+.piece:nth-child(1) { top: 10%; left: 10%; animation-duration: 5s; }
+.piece:nth-child(2) { top: 20%; left: 30%; animation-duration: 6s; }
+.piece:nth-child(3) { top: 30%; left: 50%; animation-duration: 7s; }
+.piece:nth-child(4) { top: 40%; left: 70%; animation-duration: 8s; }
+.piece:nth-child(5) { top: 50%; left: 20%; animation-duration: 5s; }
+.piece:nth-child(6) { top: 60%; left: 40%; animation-duration: 6s; }
+.piece:nth-child(7) { top: 70%; left: 60%; animation-duration: 7s; }
+.piece:nth-child(8) { top: 80%; left: 80%; animation-duration: 8s; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
